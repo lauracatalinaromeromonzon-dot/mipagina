@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bono Joker</title>
+
+  <style>
+    :root{
+      --violeta:#5b1a8c;
+      --violeta-oscuro:#3b0f5f;
+      --dorado:#f5c76a;
+      --verde:#25d366;
+      --blanco:#ffffff;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family: Arial, sans-serif;
+      color:var(--blanco);
+
+      background:
+        linear-gradient(180deg, rgba(70,0,110,.65), rgba(30,0,60,.85)),
+        url("fondo.jpg");
+      background-size:cover;
+      background-position:center;
+    }
+
+    .box{
+      width:min(520px, 92vw);
+      text-align:center;
+      padding:30px 20px;
+    }
+
+    .logo{
+      width:160px;
+      height:160px;
+      margin:0 auto 18px;
+      border-radius:50%;
+      overflow:hidden;
+      border:2px solid var(--dorado);
+      box-shadow:0 0 25px rgba(245,199,106,.6);
+      background:#000;
+    }
+
+    .logo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    h1{
+      margin:10px 0 6px;
+      font-size:34px;
+      font-weight:900;
+      color:var(--dorado);
+      text-transform:uppercase;
+    }
+
+    h2{
+      margin:0 0 14px;
+      font-size:20px;
+      font-weight:900;
+      text-transform:uppercase;
+    }
+
+    .badge{
+      display:inline-block;
+      background:rgba(0,0,0,.55);
+      padding:6px 14px;
+      border-radius:20px;
+      font-size:13px;
+      margin-bottom:18px;
+    }
+
+    input{
+      width:100%;
+      max-width:360px;
+      padding:14px;
+      border-radius:30px;
+      border:1px solid rgba(255,255,255,.25);
+      outline:none;
+      background:rgba(255,255,255,.15);
+      color:#fff;
+      font-size:15px;
+      text-align:center;
+      margin-bottom:18px;
+    }
+
+    input::placeholder{color:#eee}
+
+    button{
+      width:100%;
+      max-width:360px;
+      padding:16px;
+      border:none;
+      border-radius:35px;
+      font-size:18px;
+      font-weight:900;
+      color:#fff;
+      background:var(--verde);
+      cursor:pointer;
+      box-shadow:0 10px 25px rgba(37,211,102,.6);
+    }
+
+    button:active{transform:scale(.98)}
+
+    .mini{
+      margin-top:12px;
+      font-size:12px;
+      opacity:.85;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+
+    <h1>QUIERO MI USUARIO AHORA</h1>
+    <h2>✅PLATAFORMA VERIFICADA✅</h2>
+
+    <div class="badge">ESCRIBINOS APRETANDO EL BOTON TE ABAJO 👇</div>
+
+    <input id="nombre" placeholder="Ingresa tu nombre">
+
+    <button onclick="ir()">OBTENER MI BONO AHORA</button>
+
+    <div class="mini">CARGA Y RETIRA LAS 24hs · + 385.977 Visitas</div>
+
+  </div>
+
+  <script>
+    const NUMERO = "54911XXXXXXXX"; // TU NUMERO
+
+    function ir(){
+      const n = document.getElementById("nombre").value.trim();
+      const msg = n
+        ? `Hola! Me llamo ${n}. Quiero mi bono.`
+        : `Hola! Quiero mi bono.`;
+
+      window.open(
+        `https://wa.me/${NUMERO}?text=${encodeURIComponent(msg)}`,
+        "_blank"
+      );
+    }
+  </script>
+</body>
+</html>
